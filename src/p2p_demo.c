@@ -38,7 +38,7 @@
 #include "p2p_demo.h"
 #include "mimem.h"
 #include "asf.h"
-#include "tcc.h"
+#include "gpio_pwm.h"
 #if defined(ENABLE_SLEEP_FEATURE)
 #include "sleep_mgr.h"
 #endif

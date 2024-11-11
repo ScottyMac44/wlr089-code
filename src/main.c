@@ -35,7 +35,8 @@
 #include "task.h"
 #include "asf.h"
 #include "sio2host.h"
-#include "gpio.h"
+#include "gpio_pwm.h"
+#include "p2p_demo.h"
 
 #if defined(ENABLE_NETWORK_FREEZER)
 #include "pdsDataServer.h"
@@ -62,7 +63,7 @@ int main ( void )
 	
 	system_init();
 	delay_init();
-	GPIO_Init()
+	GPIO_Init(); // Code I added - Initialize GPIO pin
 	DemoOutput_Greeting();
 	Initialize_Demo(false);
 	cpu_irq_enable();
@@ -103,6 +104,7 @@ int main ( void )
 	/* Initialize demo application */
     Stack_Init();
 
+	// Code I added - Constantly check for SW0 being pressed, broadcast a message if it has been pressed.
     while(1)
     {
 		SYSTEM_RunTasks();
@@ -163,30 +165,4 @@ void ReadMacAddress(void)
 		myLongAddress[i] = peui64[MY_ADDRESS_LENGTH-i-1] ;
 	}
 #endif
-}
-
-void GPIO_Init(void) {
-    struct port_config pin_conf;
-    port_get_config_defaults(&pin_conf);
-
-    // Set SW0 as input
-    pin_conf.direction = PORT_PIN_DIR_INPUT;
-    port_pin_set_config(BUTTON_0_PIN, &pin_conf);
-
-    // Configure pin PA08 as output for PWM
-    pin_conf.direction = PORT_PIN_DIR_OUTPUT;
-    port_pin_set_config(PIN_PA08, &pin_conf);
-}
-
-void GPIO_Init(void) {
-    struct port_config pin_conf;
-    port_get_config_defaults(&pin_conf);
-
-    // Configure SW0 as input
-    pin_conf.direction = PORT_PIN_DIR_INPUT;
-    port_pin_set_config(BUTTON_0_PIN, &pin_conf);
-
-    // Configure pin PA08 as output for PWM
-    pin_conf.direction = PORT_PIN_DIR_OUTPUT;
-    port_pin_set_config(PIN_PA08, &pin_conf);
 }

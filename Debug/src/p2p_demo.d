@@ -184,7 +184,7 @@ src/p2p_demo.d src/p2p_demo.o: ../src/p2p_demo.c \
  ../src/ASF/common/services/serial/sam0_usart/usart_serial.h \
  ../src/ASF/sam0/drivers/tc/tc.h \
  ../src/ASF/sam0/drivers/tc/tc_interrupt.h \
- ../src/ASF/sam0/drivers/tc/tc.h \
+ ../src/ASF/sam0/drivers/tc/tc.h ../src/gpio_pwm.h \
  ../src/ASF/thirdparty/wireless/addons/sio2host/uart/sio2host.h \
  ../src/ASF/thirdparty/wireless/LoRa_P2P/source/mimac/phy/phy.h \
  ../src/ASF/thirdparty/wireless/lorawan/tal/inc/radio_interface.h \
@@ -578,6 +578,8 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-no
 ../src/ASF/sam0/drivers/tc/tc_interrupt.h:
 
 ../src/ASF/sam0/drivers/tc/tc.h:
+
+../src/gpio_pwm.h:
 
 ../src/ASF/thirdparty/wireless/addons/sio2host/uart/sio2host.h:
 
