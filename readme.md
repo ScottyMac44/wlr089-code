@@ -3,4 +3,5 @@ This repository contains my modified code derrived from the LoRa P2P repository 
 
 ## Changes
 I have modified src/main.c and src/p2p_demo.c
+
 In this modified version, upon SW0 being pressed on one board, it toggles a constant PWM signal on GPIO pin PA08
