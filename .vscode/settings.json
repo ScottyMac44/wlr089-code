@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "sw_timer.h": "c"
+    },
+    "C_Cpp.default.compilerPath": "c:\\Program Files\\Microchip\\xc8\\v2.36\\bin\\xc8.exe"
+}
